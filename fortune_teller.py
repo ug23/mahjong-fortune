@@ -6,7 +6,8 @@ class FortuneTeller:
         random = Random().random()
 
         oracles = [
-            f"今日のラッキー牌は{self.lucky_tile(random)}です。 *{self.lucky_yaku(random)}* が和了れそうな一日。",
+            f"今日のラッキー牌は{self.lucky_tile(random)}です。 "
+            + f"*{self.lucky_yaku(random)}* が和了れそうな一日。",
             self.message(random)
         ]
 
