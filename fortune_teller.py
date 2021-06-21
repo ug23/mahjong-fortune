@@ -19,18 +19,19 @@ class FortuneTeller:
         return yaku[i]
 
     def lucky_tile(self, random) -> str:
-        NUMBER_OF_KINDS = 37
-        x = int(random * NUMBER_OF_KINDS)
+        NUMBER_OF_KINDS = 34
+        x = int(random * NUMBER_OF_KINDS) + 1
 
-        if x < 10:
+        if 1 <= x <= 9:
             return f":mj_m{x}:"
-        elif 10 <= x <= 19:
-            return f":mj_s{x - 10}:"
-        elif 20 <= x <= 29:
-            return f":mj_p{x - 20}:"
+        elif 10 <= x <= 18:
+            return f":mj_s{x - 9}:"
+        elif 19 <= x <= 27:
+            return f":mj_p{x - 18}:"
         else:
             # XXX: 字牌だけ読みが末尾にあるので別個にリストを作った
-            return self.EMOJI_ZI_PAI[x - 30 - 1]
+            #      リストを1-originにしたのでそのまま呼べる
+            return self.EMOJI_ZI_PAI[x - 27]
 
     def message(self, random) -> str:
         i = int(random * len(self.MESSAGES))
@@ -49,7 +50,9 @@ class FortuneTeller:
             return self.SIX_HAN_HANDS + self.THREE_HAN_HANDS + \
                 self.THREE_HAN_HANDS + self.ONE_HAN_HANDS
 
-    EMOJI_ZI_PAI = [':mj_z1_ton:',
+    # XXX: 0-originにしたいから0番目を空にしておく
+    EMOJI_ZI_PAI = ['',
+                    ':mj_z1_ton:',
                     ':mj_z2_nan:',
                     ':mj_z3_sha:',
                     ':mj_z4_pei:',
