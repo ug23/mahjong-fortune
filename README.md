@@ -4,6 +4,9 @@
 
 Flaskで作っています。
 
+![ 2021-06-23 12 28 59](https://user-images.githubusercontent.com/2645151/123031043-a2c72680-d41e-11eb-8a67-7544e4232984.png)
+
+
 ## 使い方
 ※あとでDeploy to herokuボタンを置いておきます
 
@@ -23,3 +26,6 @@ gitとheroku CLIが必要です。
 
 ## 既知の問題
 - dynoスリープ時にメンションをもらうと占い結果を2,3回返してしまうらしい
+
+## Contribution
+IssueでもPRでも適当にください
