@@ -51,7 +51,7 @@ class FortuneTeller:
             return self.YAKU_BASED_ON_LUCK
         else:
             return self.SIX_HAN_HANDS + self.THREE_HAN_HANDS + \
-                self.THREE_HAN_HANDS + self.ONE_HAN_HANDS
+                self.TWO_HAN_HANDS + self.ONE_HAN_HANDS
 
     # XXX: 0-originにしたいから0番目を空にしておく
     EMOJI_ZI_PAI = ['',
