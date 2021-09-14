@@ -3,22 +3,23 @@ from random import Random
 
 class FortuneTeller:
     def tell(self) -> str:
-        random = Random().random()
-
         oracles = [
-            f"今日のラッキー牌は{self.lucky_tile(random)}です。 "
-            + f"*{self.lucky_yaku(random)}* が和了れそうな一日。",
-            self.message(random)
+            f"今日のラッキー牌は{self.lucky_tile()}です。 "
+            + f"*{self.lucky_yaku()}* が和了れそうな一日。",
+            self.message()
         ]
 
         return '\n'.join(oracles)
 
-    def lucky_yaku(self, random) -> str:
+    def lucky_yaku(self) -> str:
+        random = Random().random()
         yaku = self.__pick_yaku_group(random)
         i = int(random * len(yaku))
         return yaku[i]
 
-    def lucky_tile(self, random) -> str:
+    def lucky_tile(self) -> str:
+        random = Random().random()
+
         NUMBER_OF_KINDS = 34
         x = int(random * NUMBER_OF_KINDS) + 1
 
@@ -33,12 +34,14 @@ class FortuneTeller:
             #      リストを1-originにしたのでそのまま呼べる
             return self.EMOJI_ZI_PAI[x - 27]
 
-    def message(self, random) -> str:
+    def message(self) -> str:
+        random = Random().random()
+
         i = int(random * len(self.MESSAGES))
         return self.MESSAGES[i]
 
-    def __pick_yaku_group(self, random) -> list:
-        x = random * 100
+    def __pick_yaku_group(self) -> list:
+        x = Random().random() * 100
 
         if x < 0.001:
             return self.TOO_LARELY_YAKUMAN
