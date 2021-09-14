@@ -13,7 +13,7 @@ class FortuneTeller:
 
     def lucky_yaku(self) -> str:
         random = Random().random()
-        yaku = self.__pick_yaku_group(random)
+        yaku = self.__pick_yaku_group()
         i = int(random * len(yaku))
         return yaku[i]
 
