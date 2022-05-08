@@ -8,7 +8,7 @@ Flaskで作っています。
 
 
 ## 使い方
-※あとでDeploy to herokuボタンを置いておきます
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 gitとheroku CLIが必要です。
 
