@@ -15,12 +15,13 @@ def hello_world():
 
 @app.route('/', methods=['POST'])
 def post():
-    print(request.get_data())
-    request_payload = json.loads(request.get_data())
+    request_data = type(request.get_data())
+    print(request_data)
+    request_payload = json.loads(request_data)
 
     if request_payload['type'] == 'url_verification':
         # slackのchallenge認証を通すために、challengeに入っている文字列をオウム返しする
-        return request.get_data()['challenge']
+        return request_data['challenge']
     elif is_target(request_payload):
         channel = request_payload['event']['channel']
         send_message(fortune_teller.tell(), channel)
